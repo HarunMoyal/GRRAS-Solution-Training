@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> -->
+//         promocode ={
+//     "Mern":20,
+//     "first":50,
+//     "devanshusir":80,
+//     "grras":15
+// }
+// let price = 18000;
+// let code = prompt("Enter Promocode:-")
+// console.log(code.value)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Code Example</title>
+</head>
+<body>
+
+<script>
+    const promoCodes = {
+        "Mern": 20,
+        "first": 50,
+        "devanshusir": 80,
+        "grras": 15
+    };
+
+    let price = 18000;
+
+    let enteredCode = prompt("Enter Promo Code:");
+
+    if (promoCodes.value(enteredCode)) {
+        let discount = promoCodes[enteredCode];
+        let discountedPrice = price - (price * (discount / 100));
+
+        document.write(`Discount Applied: ${discount}%`);
+        document.write(`Discounted Price: $${discountedPrice.toFixed(2)}`);
+    } else {
+        document.write("Invalid Promo Code. No discount applied.");
+    }
+</script>
+
+</body>
+</html>
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: blue;
+            height: 100vh;
+        }
+
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .boxes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .boxes.center {
+            justify-content: center;
+        }
+
+        .boxes div {
+            width: 60px;
+            height: 60px;
+            border: .5px solid rgb(194, 175, 175);
+            font-size: 30px;
+            display: grid;
+            place-items: center;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid rgb(24, 23, 23);
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="boxes">
+            <div id="number1">11</div>
+            <div>+</div>
+            <div id="number2">12</div>
+        </div>
+        <div class="boxes center">
+            <div>=</div>
+        </div>
+        <input id="input" type="text" placeholder="?" autofocus>
+        <button onclick="checkAnswer()">Submit</button>
+        <div>Score: <span id="score">0</span></div>
+    </main>
+    <script>//use https://confetti.js.org/ for animations
+        let number1 = document.getElementById("number1");
+        let number2 = document.getElementById("number2");
+        let scoreOutput = document.getElementById("score");
+        let input = document.getElementById("input");
+        let answer;
+        let score = 0;
+
+        function randomNumber() {
+            input.value = "";
+            let randm1 = Math.floor(Math.random() * 100);
+            let randm2 = Math.floor(Math.random() * 100);
+            console.log(randm1, "+", randm2);
+
+            answer = randm1 + randm2;
+            console.log(answer);
+            number1.innerText = randm1;
+            number2.innerText = randm2;
+        }
+
+        function checkAnswer() {
+            if (answer === parseInt(input.value)) {
+                score++;
+                confetti({
+  particleCount: 100,
+  spread: 70,
+  origin: { y: 0.6 },
+});
+            } else {
+                score--;
+
+                if (score < 0) {
+                    
+                    score = 0;
+                }
+            }
+
+            showScore(score);
+            randomNumber();
+        }
+
+        function showScore(score) {
+            scoreOutput.textContent = score;
+        }
+
+        randomNumber();
+    </script>
+</body>
+</html>

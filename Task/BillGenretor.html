@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Point</title>
+    <span>Quantity of Item</span>
+    <select name="Quantity" id="Qty" onchange="Quantity()">
+        <option value="abc"></option>
+
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <span>Select Food:-</span>
+    <select name="Items" id="item" onchange="Item()">
+        <option value="1"></option>
+
+        <option value="Pizza">Pizza</option>
+        <option value="Berger">Berger</option>
+        <option value="Patis">Patis</option>
+    </select>
+    <p id="output"></p>
+    <button onclick="Billprint()">Print Bill</button>
+
+</head>
+
+<body>
+    <script>
+        let Rs = "";
+        let Disc = "";
+
+        function Item() {
+            let SelectItem = document.getElementById("item").value;
+
+            if (SelectItem === "Pizza") {
+                Rs = 100;
+                Disc = 20;
+            } else if (SelectItem === "Berger") {
+                Rs = 50;
+                Disc = 20;
+            } else {
+                Rs = 30;
+                Disc = 10;
+            }
+
+
+            Quantity();
+
+            let price = Rs * Quantity()
+            console.log("Select Item", SelectItem)
+            console.log("Rate of per Item:-", +Rs, "/-");
+            console.log("Quantity", Quantity())
+            console.log("Total Rate of Item:-", +price);
+            console.log("Discount of this Item in %", +Disc, "%")
+            let discount = price * (Disc / 100)
+            console.log("Discount in Rupees:-", +discount, "Rs");
+
+            let netValue = price - discount
+
+            console.log("Item price After Discount", +netValue)
+            let gst = netValue * (20 / 100)
+            console.log("GST", gst)
+            let netAmount = gst + netValue
+            console.log("NetAmount you Pay:-", netAmount)
+            let output = document.getElementById("output");
+
+            output.innerHTML = "Select Item: " + SelectItem + "<br>";
+            output.innerHTML += "Rate of per Item: " + Rs + "/- <br>";
+            output.innerHTML += "Quantity: " + Quantity() + "<br>";
+            output.innerHTML += "Total Rate of Item: " + price + "<br>";
+            output.innerHTML += "Discount of this Item in %: " + Disc + "% <br>";
+            output.innerHTML += "Discount in Rupees: " + discount + " Rs <br>";
+            output.innerHTML += "Item price After Discount: " + netValue + "<br>";
+            output.innerHTML += "GST: " + gst + "<br>";
+            output.innerHTML += "Net Amount you Pay: " + netAmount + "<br>";
+            
+        }
+function Billprint(){
+    window.print();
+}
+
+        function Quantity() {
+            let T_Qty = document.getElementById("Qty").value;
+
+            return T_Qty
+        }
+
+
+    </script>
+</body>
+
+</html>

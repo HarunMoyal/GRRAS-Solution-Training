@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        #data {
+            background-color: aqua;
+            height: 400px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 5%;
+            color: blue;
+            display: none;
+        }
+
+        img {
+            max-width: 60%;
+            height: auto;
+        }
+        #ShowBtn {
+            margin-bottom: 20px;
+        }
+        #pre {
+            display: none;
+        }
+        #next {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="data">
+        <div>
+            <img src="" alt="" id="pimage">
+            <div id="product"></div>
+        </div>
+    </div>
+    <br/>
+    <button onclick="pre()" id="pre">Previous</button>
+    <button onclick="next()" id="next">Next</button>
+    <button onclick="apiData()" id="ShowBtn">Show data</button>
+
+    <script>
+        let currentIndex = 0;
+        let data;
+
+        async function apiData() {
+            let result = await fetch("https://dummyjson.com/products");
+            data = await result.json();
+
+            displayProduct(currentIndex);
+            document.getElementById("ShowBtn").style.display = "none";
+            document.getElementById("pre").style.display = "block";
+            document.getElementById("next").style.display = "block";
+            document.getElementById("data").style.display = "block";
+
+            console.log(data);
+        }
+
+        function pre() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                displayProduct(currentIndex);
+            }
+            
+        }
+
+        function next() {
+            if (currentIndex < data.products.length - 1) {
+                currentIndex++;
+                displayProduct(currentIndex);
+            }
+            
+        }
+        
+
+        function displayProduct(index) {
+            let { title, description, price, rating, images } = data.products[index];
+
+            
+            document.getElementById("pimage").src = images[0];
+
+            
+            document.getElementById("product").innerHTML = `
+                <p>Product title: ${title}</p>
+                <p>Product Description: ${description}</p>
+                <p>Product Price: ${price}</p>
+                <p>Product Rating: ${rating}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

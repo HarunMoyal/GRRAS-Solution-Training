@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <button class="btn" onclick="pattern()"> Click on Pattern</button>
+    <script>
+        function pattern(){
+        for (let i =1;i<=5;i++){
+    for(let j =1;j<=4;j++){
+        document.write("*");
+    }
+    document.write("<br/>")
+}
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .pattern-output {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" onclick="generatePattern()">Click on Pattern</button>
+    <div class="pattern-output" id="patternOutput"></div>
+
+    <script>
+        function generatePattern() {
+            let output = '';
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 4; j++) {
+                    output += '* ';
+                }
+                output += '<br/>';
+            }
+            document.getElementById('patternOutput').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

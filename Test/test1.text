@@ -1,0 +1,73 @@
+1.Describe the variable and diffrance?
+Ans:-Variables are named containers for storing data values that can be accessed and modified. variables using the keywords var, let, or const. var is a older keyword scope can be redcclair and hoisting.let is block scoped, const is aalso block scope and this is cannot be redeclair and reassigned and not hoisting
+2.Diff. between== and ===
+Ans:-== it mean only declair value and === it means declair same value and datatype
+3.write a code to hide a button
+okAns:-hidebutton.html
+4.create arrow function syntax with some code
+Ans:- 
+let Add = (a,b)=>a+b;
+let result =Add(10,20)
+console.log(result)
+5. Array =[12,18,45,23,98,76,56,90,84,68] print a new number all number >50
+Ans:- //use for each method
+
+const numbers = [12, 18, 45, 23, 98, 76, 56, 90, 84, 68];
+numbers.forEach(number => {
+  if (number > 50) {
+    console.log(number);
+  }
+});
+//use map mathod
+let a =[];
+let fil=numbers.filter(number =>(number > 50) );
+  console.log(fil)
+6.ha ha ha i am a function waite 5second
+Ans:function haha(){
+    console.log("HAhaHaHa")
+}
+
+setTimeout(haha,5000);
+
+setTimeout(() => {
+    console.log("5Sec");
+  }, 5000);
+  
+
+7.you can reapet any time reapet in 2 second
+Ans:-function hello(){
+    console.log("Hello World!")
+}
+setInterval(hello,2000);
+8.write a code to show and hide password
+:-<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Possword</title>
+</head>
+<body>
+    <input type="password" id="Password"  >
+    <button id="button" onclick="buttonClick()">Press button</button>
+    <script>
+let pass= document.getElementById("Password");
+    let   btn = document.getElementById("button")
+    function buttonClick(){
+        if(pass.type==="password"){
+            pass.type="text"
+        }else{
+            pass.type="password"
+        }
+    }
+    </script>
+    
+</body>
+</html>
+
+9.Itreate all value
+inventory={
+    ["iPhone13",[70000,500000,30],"2022"],
+    ["Nike Shoes",[15000,10000,10],"2020"],
+    ["TV Led",[50000,30000,5]"2021"]
+}

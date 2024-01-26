@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="product"></div>
+    <img src="" alt="" id="pimage">
+    <button onclick="myData()">Show Data</button>
+    <script>
+        // async function myData(){
+//         try{
+//         let result =    await myPromise
+//     }
+//     fetch("http://dummyjson.com/products/1").then((result)=>{
+//         return result.json()
+//     }).then((data)=>{
+//         console.log(data)
+// })
+// }
+
+async function myData() {
+    try {
+        let result = await fetch("http://dummyjson.com/products");
+        let data = await result.json();
+        let ptitle =data.products[0].title;
+        let pdesc = data.products[0].descripition;
+        document.getElementById("product").innerText="product title:=" +ptitle;
+        let pimage  = data.products[0].images[0];
+        document.getElementById("pimage").attributes.value=pimage;
+        
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+// Call the function
+// myData();
+
+// fetch('https://dummyjson.com/products').then((result)=>{
+//     return result.json()
+// }).then((data)=>{
+//     console.log(data)
+// })
+
+    </script>
+</body>
+</html>

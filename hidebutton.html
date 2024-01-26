@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show/Hide Button Example</title>
+  <style>
+    
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="showButton">Show Button</button>
+<button id="myButton" style="display: none;">Click me</button>
+
+<script>
+  
+  var showButton = document.getElementById('showButton');
+  var myButton = document.getElementById('myButton');
+
+  
+  showButton.addEventListener('click', function() {
+    
+    if (myButton.style.display === 'none') {
+      myButton.style.display = 'block'; 
+    } else {
+      myButton.style.display = 'none';
+    }
+  });
+  promocode ={
+    "Mern":20,
+    "first":50,
+    "devanshusir":80,,
+    "grras:15"
+}
+let price = 18000;
+let code = prompt("Enter Promocode:-")
+console.log(code.value)
+</script>
+
+</body>
+</html>
