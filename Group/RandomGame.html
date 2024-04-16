@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Friend</title>
+<style>body {
+    font-family: Arial, sans-serif;
+    background-image: url(WhatsApp\ Image\ 2024-02-01\ at\ 1.56.56\ AM.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+  }
+  h1{
+    color: #95a7b7;
+    font-size: 55px;
+    margin-top:10px;
+  }
+  
+  #container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color:blue;
+    font-size: 30px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .random {
+    background-color:blue /* Change to your desired highlight color */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: large;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  #random-friend{
+    color: blue;
+    font-size: 70px;
+  }
+  </style>
+</head>
+<body>
+  <div id="container">
+    
+    <ul id="friend-list">
+      <h1>Aaj Party Kaun Dega</h1>
+      <li>Nilesh</li>
+      <li>Bhawna</li>
+      <li>Neha</li>
+      <li>N.G.</li>
+      <li>Karan</li>
+      <li>Aadil</li>
+      <li>Mudit</li>
+      <li>Aani</li>
+      <li>Harun</li>
+    </ul>
+   
+    <p id="one"></p>
+    <p id="random-friend"></p><br><br>
+    <button id="random-btn">Get Party Friends</button>
+  </div>
+ 
+  <script>
+    document.getElementById('random-btn').addEventListener('click', function() {
+      var friends = document.getElementById('friend-list').getElementsByTagName('li');
+      var randomIndex = Math.floor(Math.random() * friends.length);
+      var randomFriend = friends[randomIndex].innerText;
+      
+      document.getElementById('random-friend').innerText = "MOYE MOYE: " + randomFriend;
+  
+      // Hide the container
+      document.getElementById("friend-list").style.display = "none";
+  
+      if (randomFriend === 'Aani') {
+        document.body.style.backgroundImage = 'url("Aani.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+      } else if (randomFriend === 'Aadil') {
+        document.body.style.backgroundImage = 'url("Aadil.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Bhawna') {
+        document.body.style.backgroundImage = 'url("Bhawna.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Harun') {
+        document.body.style.backgroundImage = 'url("Harun.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Karan') {
+        document.body.style.backgroundImage = 'url("Karan.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'N.G.') {
+        document.body.style.backgroundImage = 'url("N.G..jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Neha') {
+        document.body.style.backgroundImage = 'url("Neha.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Nilesh') {
+        document.body.style.backgroundImage = 'url("Nilesh.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      }  else if (randomFriend === 'Mudit') {
+        document.body.style.backgroundImage = 'url("Mudit.jpeg")';
+        document.body.style.backgroundRepeat = 'no-repeat';
+document.body.style.backgroundAttachment = 'fixed';
+document.body.style.width = '100%';
+document.body.style.height = '50vh';
+document.body.style.backgroundSize = '300px'; 
+document.body.style.backgroundPosition = 'center';
+
+
+      } 
+    });
+  </script>
+  
+</body>
+</html>
